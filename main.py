@@ -21,8 +21,6 @@ def homePage():
 @app.route('/msg', methods=['POST'])
 def page():
     msg = request.form['msg']
-    print(request.form)
-
     try:
         if msg != "":
             resp = ask_gpt(msg)

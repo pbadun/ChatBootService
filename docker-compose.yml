@@ -6,7 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5001:5000"
-#    volumes:
-#      - ./app:/app  # Монтируем локальную директорию с приложением внутрь контейнера
-#    working_dir: /app
-#    command: python app.py  # Команда для запуска вашего приложения
+    restart: unless-stopped
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
